@@ -1,10 +1,16 @@
-let kviz = document.createElement("div");
+let kviz = document.querySelector("div");
 kviz.classList.add(".kviz")
 
-let poleOdpoved = [
-{odpoved: "Kočičák"},
-{odpoved: "Mončičák"},
-{odpoved: "Opičák"}
+let poleOdpovedi = [
+{dataOdpoved: "Kočičák"},
+{dataOdpoved: "Mončičák"},
+{dataOdpoved: "Opičák"},
+{dataOdpoved: "Kokos"},
+{dataOdpoved: "Melounek"},
+{dataOdpoved: "Jahoda"},
+{dataOdpoved: "Ani jedna z možností"},
+{dataOdpoved: "Umět JavaScript"},
+{dataOdpoved: "Chodit po kurzu do hospody"}
 ]
 
 const otazky = [
@@ -14,34 +20,64 @@ const otazky = [
 ]
 console.log(otazky)
 
+//for cyklus v kterém je napsán kvíz :/
 for (i=0; i < otazky.length; i++) {
-let otazka = document.createElement("h1");
-otazka.textContent = otazky.otazka;
+let otazka = document.createElement("div")
 
-let otazkaPoradi = document.createElement("h3")
+let otazkaNadpis = document.createElement("h2");
+otazkaNadpis.textContent = "Otázka" + " " + 1
+otazkaNadpis.classList.add("#otazka")
+
+//otázka
+let otazkaPoradi = document.createElement("p")
 otazkaPoradi.classList.add("#poradi")
+otazkaPoradi.textContent = otazky[0].otazka
 
+//div, který obsahuje div foto, obrázek a seznam odpovědí
+let obsah = document.createElement("div");
+obsah.classList.add(".obsah")
 
+//obrázek k otázce
 let obrazekOtazka = document.createElement("img");
 obrazekOtazka.classList.add("#obrazek");
-obrazekOtazka.src = otazky[i].foto;
-obrazekOtazka.alt = otazky[i].jmeno;
+obrazekOtazka.src = otazky[0].foto;
+obrazekOtazka.alt = otazky[0].jmeno;
 
+//div, který obsahuje obrázek
+let foto = document.createElement("div")
+foto.classList.add(".foto")
+
+//div, který obsahuje seznam odpovědí
+let moznosti = document.createElement("div")
+moznosti.classList.add("#moznosti")
+
+//seznam, který obsahuje odpovědi
+let odpovedi = document.createElement("ul")
+odpovedi.textContent = poleOdpovedi.dataOdpoved
+odpovedi.classList.add("#odpovedi")
+
+//li vytvořené JS, které obsahuje jednotlivé položky odpovědí
 let odpoved = document.createElement("li");
-odpoved.classList.add("#li");
-odpoved.textContent = poleOdpoved;
+odpoved.classList.add("li");
+odpoved.textContent = poleOdpovedi[i].dataOdpoved;
 console.log(odpoved)
+// odpoved.onclick = priKliknuti({
+    
+// })
 
-let odpovedi = document.createElement("ul");
-odpovedi.classList.add("#odpovedi");
-console.log(otazka)
+odpovedi.appendChild(odpoved)
+moznosti.appendChild(odpovedi)
 
-let vyber = document.createElement("div");
+foto.appendChild(obrazekOtazka)
 
-// vyber.appendChild(otazky)
-// vyber.appendChild(odpoved)
+obsah.appendChild(foto)
+obsah.appendChild(moznosti)
 
-// kviz.appendChild(vyber);
+otazka.appendChild(obsah)
+otazka.appendChild(otazkaNadpis)
+otazka.appendChild(otazkaPoradi)
+
+kviz.appendChild(otazka);
 
 }
 
