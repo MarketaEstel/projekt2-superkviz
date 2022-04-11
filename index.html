@@ -16,32 +16,44 @@
 	<div class="kviz">
 
 		<!--Sem můžeš zapsat pořadí otázky. opět pomocí JS-->
-		<!-- <p id="poradi"></p> -->
+		<p id="poradi"></p>
 
 
 		<!--A sem už přijde samotná otázka-->
-		<!-- <h2 id="otazka"></h2> -->
+		<h2 id="otazka"></h2>
 
 		
 		<!--Toto je ukázka případné struktury - rovnou to nahraď podobnou strukturou reálné otázky pomocí JS-->
 
-		<!-- <div class="obsah">
-			<div class="foto">
+		<div class="obsah">
+			<!-- <div class="foto">
 				<img id="obrazek" src="obrazky/snehurka.jpg" alt="Ilustrační obrázek">
-			</div>
+			</div> -->
 
 			<div id="moznosti">
-				<ul id="odpovedi"></ul>
+				<ul id="odpovedi">
+					<li data-odpoved="0">Kočičák</li>
+					<li data-odpoved="1">Mončičák</li>
+					<li data-odpoved="2">Opičák</li>
+				
+					<li data-odpoved="3">Kokos</li>
+					<li data-odpoved="4">Melounek</li>
+					<li data-odpoved="5">Jahoda</li>
+					<li data-odpoved="6">Ani jedna z možností</li>
+				
+					<li data-odpoved="7">Umět JavaScript</li>
+					<li data-odpoved="8">Chodit po kurzu do hospody</li>
+				</ul>
 			</div>
-		</div> -->
+		</div>
 
 	</div>
 
 	<!--A nakonci bude tady výsledek - nejdřív vidět není a poté ano. U otázek je to opačně.-->
-	<!-- <div class="vysledek">
+	<div class="vysledek">
 		<h2>Tvoje hodnocení</h2>
 		<div id="hodnoceni"></div>
-	</div> -->
+	</div>
 
 
 	<script src="kviz.js"></script>
