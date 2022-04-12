@@ -9,7 +9,7 @@ console.log(otazky);
 
 
 
-    for (i = 0; i < 1; i = i + 1) {
+    for (i = 0; i < otazky.length; i = i + 1) {
 
     let kviz = document.querySelector("div");
     kviz.classList.add(".kviz");
@@ -20,14 +20,13 @@ console.log(otazky);
         let nadpis = document.querySelector("h2");
         nadpis.textContent = otazky[i].otazka;
 
-            let obsah = document.createElement("div");
-            obsah.classList.add(".obsah");
-
+            let obsah = document.querySelector("div");
+            
                 let foto = document.createElement("div");
-                foto.classList.add(".foto");
+                foto.className = "foto"
 
                 let img = document.createElement("img");
-                img.classList.add("#obrazek");
+                img.id = "obrazek"
                 img.src = otazky[i].foto;
                 
                 foto.appendChild(img)
