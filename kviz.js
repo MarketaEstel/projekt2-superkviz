@@ -38,14 +38,15 @@ const poleOtazek = [
 
         let vybranaOdpoved = [] //do vybrané odpovedi se bude ukládat to, na co kliknou
         
-        let kviz = document.querySelector("div");
+        let kviz = document.querySelector(".kviz");
         let odpovediOdstavec = document.querySelector("ul")
         let odpoved = document.createElement("li")
+        odpoved.className = "li"
         let poradi = document.querySelector("p");
         let otazka = document.querySelector("h2")
 
-        let foto = document.querySelector("div");
-            
+        let foto = document.querySelector(".foto");
+ 
         let img = document.createElement("img");
         img.id = "obrazek"
         img.src = poleOtazek[0].foto
@@ -54,19 +55,17 @@ const poleOtazek = [
         foto.appendChild(img)
              
         for (let i = 0; i < poleOtazek.length; i++) {
-            vybranaOdpoved.push(i)
-            poradi.textContent = "Pořadí" + " " + poleOtazek[i].poradi + "/" + poleOtazek.length
+            poradi.textContent = "Pořadí" + " " + poleOtazek[0].poradi + "/" + poleOtazek.length
         }
            
         for (let i = 0; i < 1; i++) {   
             otazka.textContent = poleOtazek[i].otazka
-            console.log(otazka)
         }
                    
-        for (let a = 0; a < poleOtazek[0].odpovedi.length; a++) {
-            odpoved.textContent = poleOtazek[a].odpovedi
+        for (let i = 0; i < poleOtazek[0].odpovedi.length; i++) {
+            odpoved.textContent = poleOtazek[0].odpovedi
             odpoved.addEventListener("click", function() {
-           
+                //když kliknout na odpověd, tak by měli skočit na další stránku čili další otázka
         })
         }
 
@@ -74,7 +73,7 @@ const poleOtazek = [
         
       
 function nacteniStranky() {
-    zobrazOtazku()
+    // zobrazOtazku()
 }
 
 function zobrazOtazku() {
@@ -87,7 +86,6 @@ function zobrazOtazku() {
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
 function priKliknuti() { 
-
 } 
 
 // Funkce se postará o obsluhu kliknutí na odpověď
